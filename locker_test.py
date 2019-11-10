@@ -38,6 +38,10 @@ class TestUser(unittest.TestCase):
         self.assertEqual(self.new_user_credential.p_code,"godfather")
         self.assertEqual(self.new_user_credential.u_name,"jemmo")
 
+    def test_save_credential(self):
+        self.new_user_credential.save_credential()
+        self.assertEqual(len(UserCredential.user_credentials),1)
+
 
 if __name__ == "__main__":
     unittest.main()
