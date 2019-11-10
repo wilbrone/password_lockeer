@@ -1,5 +1,5 @@
 class UserCredential:
-	user_credentials = [] #empty array for the credentials.
+	credentials_list = [] #empty array for the credentials.
 
 	def __init__(self,media,email,p_code,u_name):
 
@@ -22,6 +22,6 @@ class UserCredential:
 		"""
 		this function is for saving the different credentials of our users		
 		"""
-		UserCredential.user_credentials.append(self)
+		UserCredential.credentials_list.append(self)
 
 

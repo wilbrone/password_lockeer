@@ -1,9 +1,11 @@
+from credential import UserCredential as user_cred
+
 class User:
     """
     class that creates new instances of the users
     """
     user_list = [] #an empty users list
-    
+
     def __init__(self,full_name,user_name,email,phone,p_word,credential):
 
         '''
@@ -24,4 +26,5 @@ class User:
         self.credential = []
 
     def save_user(self):
-        pass
+        self.credential = user_cred.credentials_list
+        print(self.credential)
