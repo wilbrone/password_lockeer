@@ -136,8 +136,8 @@ class TestUser(unittest.TestCase):
         """
         self.new_user.save_user()
 
-        found_user = User.user_login("godfather")
-        found_userName = User.user_login("JM")
+        found_user = User.user_login("JM","godfather")
+        # found_userName = User.user_login("JM")
 
         self.assertEqual(found_user.email,self.new_user.email)
 

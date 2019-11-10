@@ -49,11 +49,15 @@ class User:
             return user
 
     @classmethod
-    def user_login(cls,passWord):
+    def user_login(cls,uName,passWord):
         """
         method for getting the user based on th password
         """
         for user in cls.user_list:
-            if user.p_word == passWord:
-                print(user.full_name)
+            if user.p_word == passWord and user.user_name == uName:
+                print("Login successful")
                 return user
+            else:
+                print("wrong user name or password")
+
+User("Ray Don","DR","don@gmail.com","0712345678","sundry",[])
