@@ -112,10 +112,11 @@ class TestUser(unittest.TestCase):
 
     # ********************************************************************************************
     def test_password_gen(self):
-        trial = self.new_user.p_word
-        print(trial)
 
-        self.assertEqual(trial,UserCredential.generate_password())
+        new_test_credential = UserCredential("Facebook","james@ms.com"," ","moo") # create contact object
+        new_test_credential.generate_password()
+
+        self.assertEqual()
 
 
 if __name__ == "__main__":

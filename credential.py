@@ -1,3 +1,6 @@
+import random
+import string
+
 # from user import User
 
 class UserCredential:
@@ -22,10 +25,26 @@ class UserCredential:
 
 	def save_credential(self):
 		"""
-		this function is for saving the different credentials of our users		
+		this function is for saving the different credentials of our users.		
 		"""
 		UserCredential.credentials_list.append(self)
 
-	def generate_password():
-		pass
+	@classmethod
+	def generate_password(cls,stringLength=8):
+		"""
+		this is the method to help users generate passwords for them.		
+		"""
+
+		"""
+		Generate a random string of letters and digits for password
+		"""
+		print(cls.credentials_list)
+		for list in cls.credentials_list:
+			print(list)
+			if list.p_code == " ":
+				randomString = string.ascii_letters + string.digits
+				random_pass = ''.join(random.choice(randomString) for i in range(stringLength))
+				print(random_pass)
+				return random_pass
+			list.p_code = random_pass
 
