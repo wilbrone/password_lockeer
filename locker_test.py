@@ -54,6 +54,15 @@ class TestUser(unittest.TestCase):
 
         self.assertEqual(len(UserCredential.credentials_list),2)
 
+    def test_save_user(self):
+        
+
+        self.new_user.save_user()
+        for credential in self.new_user.credential:
+            print(credential.media)
+
+        self.assertEqual(len(User.user_list),1)
+
 
 
 if __name__ == "__main__":

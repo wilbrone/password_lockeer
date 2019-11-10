@@ -26,5 +26,13 @@ class User:
         self.credential = []
 
     def save_user(self):
+        """
+        this is a method to save the users and also get the credentials 
+        and save them in my user object.        
+        """
         self.credential = user_cred.credentials_list
-        print(self.credential)
+
+        for credentials in self.credential:
+            print(credentials.media)
+
+        User.user_list.append(self)    
