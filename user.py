@@ -5,7 +5,6 @@ class User:
     class that creates new instances of the users
     """
     user_list = [] #an empty users list
-
     def __init__(self,full_name,user_name,email,phone,p_word,credential):
 
         '''
@@ -30,9 +29,21 @@ class User:
         this is a method to save the users and also get the credentials 
         and save them in my user object.        
         """
+        print(self.user_name)
         self.credential = user_cred.credentials_list
 
         for credentials in self.credential:
-            print(credentials.media)
+            print()
 
-        User.user_list.append(self)    
+        User.user_list.append(self)
+        
+    @classmethod
+    def get_user(cls):
+        """
+        this method gets the         
+        Returns:
+            [type] -- [description]
+        """
+        for user in cls.user_list:
+            print(user.full_name)
+            return user

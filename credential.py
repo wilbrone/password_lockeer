@@ -1,3 +1,5 @@
+# from user import User
+
 class UserCredential:
 	credentials_list = [] #empty array for the credentials.
 
@@ -24,4 +26,6 @@ class UserCredential:
 		"""
 		UserCredential.credentials_list.append(self)
 
+	def generate_password():
+		pass
 
