@@ -50,6 +50,9 @@ class User:
 
     @classmethod
     def user_login(cls,passWord):
+        """
+        method for getting the user based on th password
+        """
         for user in cls.user_list:
             if user.p_word == passWord:
                 print(user.full_name)

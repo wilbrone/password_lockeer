@@ -125,15 +125,19 @@ class TestUser(unittest.TestCase):
         if new_test_credential.p_code == " ":
             randomString = string.ascii_letters + string.digits
             random_pass = ''.join(random.choice(randomString) for i in range(stringLength))
-            print(random_pass)
+            # print(random_pass)
             return random_pass
 
         self.assertEqual(random_pass,generate_password())
 
     def test_login(self):
+        """
+        test for authentication by password        
+        """
         self.new_user.save_user()
 
         found_user = User.user_login("godfather")
+        found_userName = User.user_login("JM")
 
         self.assertEqual(found_user.email,self.new_user.email)
 

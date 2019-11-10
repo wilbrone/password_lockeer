@@ -38,13 +38,14 @@ class UserCredential:
 		"""
 		Generate a random string of letters and digits for password
 		"""
-		print(cls.credentials_list)
 		for list in cls.credentials_list:
 			print(list)
 			if list.p_code == " ":
 				randomString = string.ascii_letters + string.digits
 				random_pass = ''.join(random.choice(randomString) for i in range(stringLength))
-				print(random_pass)
+				# print(random_pass)
 				return random_pass
-			list.p_code = random_pass
+				list.p_code = random_pass
+
+			print(list.p_code)
 
