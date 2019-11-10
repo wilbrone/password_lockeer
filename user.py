@@ -29,11 +29,7 @@ class User:
         this is a method to save the users and also get the credentials 
         and save them in my user object.        
         """
-        print(self.user_name)
         self.credential = user_cred.credentials_list
-
-        for credentials in self.credential:
-            print()
 
         User.user_list.append(self)
 
@@ -53,11 +49,13 @@ class User:
         """
         method for getting the user based on th password
         """
+        print(passWord+" is here")
         for user in cls.user_list:
             if user.p_word == passWord and user.user_name == uName:
                 print("Login successful")
                 return user
             else:
                 print("wrong user name or password")
+        return user
 
 User("Ray Don","DR","don@gmail.com","0712345678","sundry",[])
