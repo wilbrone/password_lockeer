@@ -1,4 +1,7 @@
 import unittest
+import random
+import string
+
 
 from user import User #class user import
 from credential import UserCredential #class credential import
@@ -112,12 +115,23 @@ class TestUser(unittest.TestCase):
 
     # ********************************************************************************************
     def test_password_gen(self):
-
+        """
+        test for passwprd generation method when user chooses to
+        Returns:
+            a random password consisting of random letters and digits 
+        """
         new_test_credential = UserCredential("Facebook","james@ms.com"," ","moo") # create contact object
-        new_test_credential.generate_password()
+        stringLength = 8
+        if new_test_credential.p_code == " ":
+            randomString = string.ascii_letters + string.digits
+            random_pass = ''.join(random.choice(randomString) for i in range(stringLength))
+            print(random_pass)
+            return random_pass
 
-        self.assertEqual()
+        self.assertEqual(random_pass,generate_password())
 
+    def test_login():
+        pass
 
 if __name__ == "__main__":
     unittest.main()
