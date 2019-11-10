@@ -130,8 +130,13 @@ class TestUser(unittest.TestCase):
 
         self.assertEqual(random_pass,generate_password())
 
-    def test_login():
-        pass
+    def test_login(self):
+        self.new_user.save_user()
+
+        found_user = User.user_login("godfather")
+
+        self.assertEqual(found_user.email,self.new_user.email)
+
 
 if __name__ == "__main__":
     unittest.main()
