@@ -11,7 +11,9 @@ This project was build using Python3.6.
 
 
 ## BDD
-
+Once the user runs the program they are prompted with two choices, if they have an account on the app or not, if not they will have to create an account before they log in. If they do have an account they will just login, if the log in details are incorrect the system will give them a message and exit. If the logins are correct they move on th the next satge. Here they get options which are, they can create social media credentials by choosing `cc` or see the credentials they added by choosing `dc` . They also have an option of logging out by entering `ex`. When a User chooces to display there credentials and they have none, the system checks if they credential array for the logged in user is equal or less than `0` they will get a message telling them that they do not have any credentials saved yet, and ask tem to add or create a new one.
+When a user decides to create a new credential, they will be asked to enetr the media for which they are creating the credentials, the user name and the email they will use. they are also to either enter their password or let the system generate for them. They can save the changes.
+they can add as many credentials as they would have.
 
 
 ## Development server
