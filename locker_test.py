@@ -23,7 +23,7 @@ class TestUser(unittest.TestCase):
         """
         self.new_user = User("James Muriuki","JM","james@ms.com","0712345678","godfather",[]) # create contact object
 
-        self.new_user_credential = UserCredential("Twitter","james@ms.com","godfather","jemmo") # create contact object
+        self.new_user_credential = UserCredential("Twitter","james@ms.com","","jemmo") # create contact object
 
 
     #***********************************************************************************************
@@ -41,7 +41,7 @@ class TestUser(unittest.TestCase):
 
         self.assertEqual(self.new_user_credential.media,"Twitter")
         self.assertEqual(self.new_user_credential.email,"james@ms.com")
-        self.assertEqual(self.new_user_credential.p_code,"godfather")
+        self.assertEqual(self.new_user_credential.p_code,"")
         self.assertEqual(self.new_user_credential.u_name,"jemmo")
 
     #********************************************************************************************
@@ -67,7 +67,7 @@ class TestUser(unittest.TestCase):
         """
         test for saving a new user        
         """
-        new_test_credential = UserCredential("IG","don@gmail.com","godfather","don") # create contact object
+        new_test_credential = UserCredential("IG","don@gmail.com","","don") # create contact object
         new_test_credential.save_credential()
 
         self.new_user.save_user()
@@ -95,7 +95,7 @@ class TestUser(unittest.TestCase):
         """
         self.new_user_credential.save_credential()
 
-        new_test_credential = UserCredential("Facebook","james@ms.com","godfather","moo") # create contact object
+        new_test_credential = UserCredential("Facebook","james@ms.com","","moo") # create contact object
         new_test_credential.save_credential()
 
         self.assertEqual(len(UserCredential.credentials_list),2)
@@ -125,7 +125,7 @@ class TestUser(unittest.TestCase):
         if new_test_credential.p_code == " ":
             randomString = string.ascii_letters + string.digits
             random_pass = ''.join(random.choice(randomString) for i in range(stringLength))
-            # print(random_pass)
+            print("hehe "+random_pass)
             return random_pass
 
         self.assertEqual(random_pass,generate_password())

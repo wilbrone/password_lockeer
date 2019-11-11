@@ -94,16 +94,17 @@ def main():
                 password = ""
                 if choice == "en":
                     password = input()
+
                 elif choice == "gn":
                     print("thank you!")
                 else:
                     print("password is required please")
 
                 print(password+"nye")
-
                 userCredentials = create_credential(media,email,password,uname)
-                for cred in userCredentials.credentials_list:
-                    print(cred.password)
+
+                for cred in UserCredential.credentials_list:
+                    print(cred.p_code)
 
             elif short_code == "ex":
                 print("\nYou Logged out...")
@@ -123,8 +124,8 @@ def create_credential(media,email,password,uname):
     uCredential = UserCredential(media,email,password,uname).save_credential()
     return uCredential 
 
-def gen_password():
-    return UserCredential.generate_password()
+def gen_password(userCredentials):
+    return UserCredential.generate_password(userCredentials)
 
 
 if __name__ == '__main__':
