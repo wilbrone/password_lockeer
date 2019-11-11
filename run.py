@@ -75,28 +75,57 @@ def main():
 
             if short_code == "dc":
                 if len(active_user.credential) <= 0:
-                    print("You have no save Credentials. You can add...")
+                    print("You have no saved Credentials. You can add...")
                 else:
                     for credentials in active_user.credential:
                         print(credentials.media + " " + credentials.u_name + " " + credentials.email)
 
             elif short_code == "cc":
-                print("Add credential")
+                print("\nNew Credential....")
+                # media,email,p_code,u_name
+                print("Enter the media...:")
+                media = input()
+                print("Enter email")
+                email = input()
+                print("Enter UserName")
+                uname = input()
+                print("\nEnter Password or Generate: en - Enter  gn - Generate")
+                choice = input().lower()
+                password = ""
+                if choice == "en":
+                    password = input()
+                elif choice == "gn":
+                    print("thank you!")
+                else:
+                    print("password is required please")
+
+                print(password+"nye")
+
+                userCredentials = create_credential(media,email,password,uname)
+                for cred in userCredentials.credentials_list:
+                    print(cred.password)
+
             elif short_code == "ex":
-                print("You Logged out...")
+                print("\nYou Logged out...")
 
                 count = 0
 
 # ********************************************************************************************
 def create_user(f_name,user_name,email,phone,pWord,credential):
     nUser = User(f_name,user_name,email,phone,pWord,credential).save_user()
-    # cnt_user = nUser.save_user()
     return nUser
 
 
 def log_in(name,pword):
-    # print(User.user_login(name,pword))
     return User.user_login(name,pword)
+
+def create_credential(media,email,password,uname):
+    uCredential = UserCredential(media,email,password,uname).save_credential()
+    return uCredential 
+
+def gen_password():
+    return UserCredential.generate_password()
+
 
 if __name__ == '__main__':
 

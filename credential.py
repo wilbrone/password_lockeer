@@ -27,6 +27,7 @@ class UserCredential:
 		"""
 		this function is for saving the different credentials of our users.		
 		"""
+		# generate_password(self)
 		UserCredential.credentials_list.append(self)
 
 	@classmethod
@@ -46,6 +47,7 @@ class UserCredential:
 				# print(random_pass)
 				return random_pass
 				list.p_code = random_pass
+
 
 			print(list.p_code)
 
