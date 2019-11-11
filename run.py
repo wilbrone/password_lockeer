@@ -44,8 +44,7 @@ def main():
 
         except AttributeError:
             print("Please enter correct password and/or Username")
-            # answer = "y" 
-            # return answer
+            
     elif answer == "y":
         print("\n")
         print("Login please..")
@@ -100,7 +99,6 @@ def main():
                 else:
                     print("password is required please")
 
-                print(password +"nye")
                 userCredentials = create_credential(media,email,password,uname)
 
             elif short_code == "ex":

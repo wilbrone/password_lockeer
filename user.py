@@ -53,7 +53,6 @@ class User:
 
             if users.p_word == passWord and users.user_name == uName:
                 print("Login successful")
-                # print(user)
                 return users
             else:
                 print("wrong user name or password")
