@@ -67,7 +67,7 @@ def main():
 
     while count == 1:
         for active_user in current_user.user_list: 
-            print("Welcome " + active_user.user_name)
+            print("\nWelcome " + active_user.user_name)
 
             print("\nHere are a few options:")
             print("Short Code:\ncc - Add Credential\ndc - Display Creddentials\nex - exit\n")
@@ -78,7 +78,7 @@ def main():
                     print("You have no saved Credentials. You can add...")
                 else:
                     for credentials in active_user.credential:
-                        print(credentials.media + " " + credentials.u_name + " " + credentials.email)
+                        print("Media:"+credentials.media + " " + "UserName:"+credentials.u_name + " " + "Email:"+credentials.email + " " +  "Password:"+credentials.p_code)
 
             elif short_code == "cc":
                 print("\nNew Credential....")
@@ -100,11 +100,8 @@ def main():
                 else:
                     print("password is required please")
 
-                print(password+"nye")
+                print(password +"nye")
                 userCredentials = create_credential(media,email,password,uname)
-
-                for cred in UserCredential.credentials_list:
-                    print(cred.p_code)
 
             elif short_code == "ex":
                 print("\nYou Logged out...")
