@@ -8,7 +8,7 @@ def main():
     count = 0
 
     print("do you have an account")
-    print("y\nn")
+    print("y - Yes\nn - No")
     answer = input().lower()
 
     if answer == "n":
@@ -19,8 +19,6 @@ def main():
 
         print("Create an account\n")
 
-        # if short_code == "sp":
-        print("Create an acount\n")
         print("Enter Full Name:")
         f_name = input()
         print("Enter prefered username:")
@@ -36,6 +34,7 @@ def main():
         newUser = create_user(f_name,user_name,email,phone,pWord,credential)
 
         print("\n")
+        print("Please Login to continue...")
         print("Enter UserName:")
         user_name = input()
         print("Enter Password:")
@@ -43,10 +42,19 @@ def main():
 
         current_user = log_in(user_name,p_word)
         print("\n")
-        print()
-        
+        try:
+            for c_user in current_user.user_list:
+                print(c_user.full_name)
+            
+                count = 1
+        except AttributeError:
+            print("Please enter correct password and/or Username")
+            answer = "y" 
+            return answer
     elif answer == "y":
         print("\n")
+        print("Login please..")
+        print("-"*10)
         print("Enter UserName:")
         user_name = input()
         print("Enter Password:")
@@ -54,17 +62,22 @@ def main():
 
         current_user = log_in(user_name,p_word)
         print("\n")
-        print(current_user) 
+        print(current_user)
+        if current_user != None: 
+            count = 1
+        else:
+            print("User do not Exist")    
 
-        # while current_user != None:
-        #     print("welcome")
-        #     code = input()
+
+    print(count)
+    while count == 1:
+        print("welcome")
+        code = input()
 
         # elif short_code == "ex":
         #     print("You Logged out...")    
         # else:
         #     print("invlid choice")
-
 
 def create_user(f_name,user_name,email,phone,pWord,credential):
     nUser = User(f_name,user_name,email,phone,pWord,credential).save_user()
@@ -73,7 +86,7 @@ def create_user(f_name,user_name,email,phone,pWord,credential):
 
 
 def log_in(name,pword):
-    print("you entered " + name + " " + pword)
+    # print(User.user_login(name,pword))
     return User.user_login(name,pword)
 
 if __name__ == '__main__':
