@@ -49,12 +49,12 @@ class User:
         """
         method for getting the user based on th password
         """
-        for user in cls.user_list:
+        for users in cls.user_list:
 
-            if user.p_word == passWord and user.user_name == uName:
+            if users.p_word == passWord and users.user_name == uName:
                 print("Login successful")
                 # print(user)
-                return user
+                return users
             else:
                 print("wrong user name or password")
             # return user
