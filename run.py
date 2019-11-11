@@ -4,12 +4,22 @@ from user import User
 from credential import UserCredential
 
 def main():
-    print("please Login or creat account for new userto continue")
-    print("Short Code:\nln - log_in\nsp - sign_up\nex - exit")
 
-    short_code = input().lower()
+    count = 0
 
-    if short_code == "sp":
+    print("do you have an account")
+    print("y\nn")
+    answer = input().lower()
+
+    if answer == "n":
+        # print("please Login or creat account for new userto continue")
+        # print("Short Code:\nln - log_in\nsp - sign_up\nex - exit")
+
+        # short_code = input().lower()
+
+        print("Create an account\n")
+
+        # if short_code == "sp":
         print("Create an acount\n")
         print("Enter Full Name:")
         f_name = input()
@@ -24,11 +34,7 @@ def main():
         credential = []
 
         newUser = create_user(f_name,user_name,email,phone,pWord,credential)
-        
-        short_code = "ln"
-        return short_code
 
-    elif short_code == "ln": 
         print("\n")
         print("Enter UserName:")
         user_name = input()
@@ -37,16 +43,27 @@ def main():
 
         current_user = log_in(user_name,p_word)
         print("\n")
-        print(current_user)
+        print()
+        
+    elif answer == "y":
+        print("\n")
+        print("Enter UserName:")
+        user_name = input()
+        print("Enter Password:")
+        p_word = input()
 
-        while current_user != None:
-            print("welcome")
-            code = input()
+        current_user = log_in(user_name,p_word)
+        print("\n")
+        print(current_user) 
 
-    elif short_code == "ex":
-        print("You Logged out...")    
-    else:
-        print("invlid choice")
+        # while current_user != None:
+        #     print("welcome")
+        #     code = input()
+
+        # elif short_code == "ex":
+        #     print("You Logged out...")    
+        # else:
+        #     print("invlid choice")
 
 
 def create_user(f_name,user_name,email,phone,pWord,credential):
